@@ -13,3 +13,11 @@ def index(request):
 def category(request, id):
     category_from_db = CategoryTable.objects.get(pk=id)
     return HttpResponse(category_from_db)
+
+def service_type(request, id):
+    service_type_from_db = ProductsTable.objects.get(pk=id)
+    show_type_descritpion_price = "<h1>" + str(service_type_from_db.name) +"</h1>" + \
+                                  "<p>" + str(service_type_from_db.description) + "</p>" + \
+                                  "<p>" + str(service_type_from_db.price) + "</p>"
+
+    return HttpResponse(show_type_descritpion_price)

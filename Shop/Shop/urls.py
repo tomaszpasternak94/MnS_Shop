@@ -22,4 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('category/<id>/', category, name='category'),
+    path('product/<id>', service_type, name='service_type'),
+
 ]
